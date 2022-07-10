@@ -1,0 +1,17 @@
+
+/*
+==========================================
+footer section Design
+==========================================
+*/
+.footer{
+    background:var(--black-color);
+  } 
+  .footer .footer-social a i{
+    color:var(--white-color);
+    font-size: 1.5rem;
+    padding:0 1rem;
+  }
+  .footer .footer-social a:hover i{
+    color:var(--primary-color);
+  }

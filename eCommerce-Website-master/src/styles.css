@@ -1,0 +1,377 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:active,
+:hover,
+:focus {
+  outline: 0 !important;
+  outline-offset: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color) !important;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/*===== Variable Define =====*/
+:root {
+  --primary-color:#ce6a85;
+  --white-color: #fff;
+  --text-color: #9e9999;
+  --black-color: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 100%;
+  font-weight: 400;
+}
+
+/*
+=========================================
+    Custom Scrollbar
+=========================================
+*/
+
+::-webkit-scrollbar {
+  width: 0.625rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+/*
+==========================================
+   Custom CSS Design
+==========================================
+*/
+
+h1 {
+  font-size: 6.25rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+h1 span {
+  color: var(--white-color);
+}
+
+h2 {
+  font-weight: 700;
+  position: relative;
+  font-size: 2.1875rem;
+  text-transform: capitalize;
+  color: var(--black-color);
+  line-height: 3.7rem;
+}
+
+h2:before {
+  background: #ce6a85;
+  border-radius: 0.3125rem;
+  content: '';
+  position: absolute;
+  top: -1.5625rem;
+  left: 0;
+  width: 1.875rem;
+  height: 0.3125rem;
+}
+
+h4 {
+  color: var(--black-color);
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin-bottom: 0.9375rem;
+  transition: all .3s linear;
+}
+
+h5 {
+  color: var(--black-color);
+  text-transform: capitalize;
+  font-family: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.125rem;
+  color: var(--text-color);
+  font-weight: 400;
+  line-height: 1.75rem;
+  letter-spacing: 0.0625rem;
+}
+.main-btn{
+  width: 9.375rem;
+  height: 3.125rem;
+  border: 0.063rem solid var(--primary-color); 
+  color:var(--black-color);
+  font-size: 1.125rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  transition: 0.3s;
+}
+.main-btn::before, .main-btn::after {
+  position: absolute;
+  background: var(--white-color);
+  z-index: -1;
+  transition: 0.3s;
+  content: '';
+}
+.main-btn::before {
+  height: 3.125rem;
+  width: 8.125rem;
+}
+
+.main-btn::after {
+  width: 9.375rem;
+  height: 1.875rem;
+}
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.main-btn:hover::before {
+  width: 0px;
+  background: var(--white-color);
+}
+
+.main-btn:hover::after {
+  height: 0px;
+  background: var(--white-color);
+}
+
+.main-btn:hover {
+  background: var(--white-color);
+  color:var(--primary-color);
+}  
+.wrapper {
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+}
+
+.text-content {
+  width: 60%;
+  margin: auto;
+}
+ 
+
+
+/* media quires */
+
+@media (max-width: 1024px) {
+  /* Custom CSS */
+  h1 {
+      font-size: 3.25rem;
+  }
+
+  h2 {
+      font-size: 1.375rem;
+      line-height: 1.8rem;
+  }
+
+  .wrapper {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+  } 
+}
+
+@media (max-width: 991px) {
+  /* Custom CSS */
+  h4,
+  .choose .card a h4 {
+      font-size: 0.9375rem;
+      margin-bottom: 0.625rem
+  }
+
+  p {
+      font-size: 0.8125rem;
+      line-height: 1.3125rem;
+  }
+  .text-content {
+      width: 100%;
+  }
+
+  /* Banner Design */ 
+  #home{
+      padding:4.375rem 0 0.375rem;
+  }
+  
+
+  /* navbar brand */
+  .navigation-wrap .navbar-brand img{
+      height:2.8125rem;
+  } 
+  .navbar-toggler{
+      color:var(--text-color);
+  }
+  .navbar-toggler i{
+      color:var(--text-color);
+      line-height: 2;
+  }
+  .navigation-wrap{
+      text-align: center;
+      background-color:var(--black-color);
+  }
+  .navigation-wrap .nav-link{
+      line-height:1.875rem;
+  }
+
+  /* top banner */ 
+  .hero_slider .carousel-caption{
+      transform:translate(-70%, -50%);
+  }
+
+  /* feature */ 
+  .features .card .icon{
+      margin-bottom:20px;
+  }
+
+  /* headphone */ 
+  #zoom-img,
+  #zoom-img-1,
+  #zoom-img-2{
+      height:220px;
+  }
+
+  /* Contact */
+  form input[type=text]{
+      margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Custom CSS */
+  .main-btn{
+      margin:auto;
+  }
+  .text-sec {
+      text-align: center;
+      padding-top: 1.875rem;
+  } 
+  h2:before {
+      left: 45%;
+  }
+
+  /* top banner */ 
+  .hero_slider .carousel-caption{
+      transform:translate(-45%, -70%);
+  }
+  .hero_slider .carousel-caption h2::before{
+      left:0;
+  }
+}
+
+@media(max-width:575px) {
+
+  /* top banner */ 
+  h1 {
+      font-size: 1.5rem;
+      margin-bottom:0.675rem;
+  }
+
+  h2 {
+      font-size: 1.25rem;
+      line-height: 1rem;
+      margin-bottom: 5px;
+  }
+
+  /* about */ 
+  .about-slider,
+  .feature-img-box,
+  .style-img{
+      width:50%;
+      margin:auto;
+  }
+  .about-section .carousel-inner{
+      border-radius: 0 0 1.875rem;
+  }
+
+  /* headphone */ 
+  #zoom-img,
+  #zoom-img-1,
+  #zoom-img-2{
+      height:13.75rem;
+      width:50%;
+      text-align: center;
+      margin:auto;
+  }
+
+  /* contact us */ 
+  form input[type=email],
+  form input[type=text],
+  .subscribe{
+      padding:0 0.625rem;
+      font-size: 0.875rem;
+      text-align: center;
+  }
+  .subscribe{
+      font-size: 0.875rem;
+  }
+  form .form-group,
+  form input[type=text]{
+      margin:0;
+      width:100%;
+  }
+  form .form-group{
+      white-space:nowrap;
+  }
+  form input[type=email]{
+      width:50%;
+  }
+  
+}
+
+@media (max-width: 430px) { 
+  /* Custom CSS */
+  h2:before {
+      top: -0.8rem;
+  } 
+
+  /* Top banner */
+  .hero_slider .carousel-caption p{
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+  }
+}        
+    

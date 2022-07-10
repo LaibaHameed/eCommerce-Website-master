@@ -1,0 +1,76 @@
+/*
+==========================================
+   Header Design
+==========================================
+*/
+.navigation-wrap{
+    position:fixed;
+    width:100%;
+    left:0;
+    z-index:1000;
+    -webkit-transition:all 0.3s ease-out;
+    transition:all 0.3s ease-out;
+    background-color: black;
+  } 
+  .navigation-wrap .nav-item{
+    padding:0 0.5rem;
+    transition:all 200ms linear;
+  }
+
+  .navbar-toggler:focus{
+    outline:none;
+    border:unset;
+    box-shadow: none;
+  }
+  .nav-link{
+    padding-top:0.9375rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    color:var(--white-color);
+    letter-spacing:0.0625rem;
+  }
+  .nav-link:hover,
+  .nav-link.active{
+    color:var(--primary-color);
+  }
+  .navigation-wrap .main-btn{
+    color:var(--white-color);
+    margin:auto;
+  }
+  .navigation-wrap .main-btn:hover{
+    background-color:transparent;
+  }
+  .navigation-wrap .main-btn::before,
+  .navigation-wrap .main-btn::after{
+    background-color:transparent;
+  }
+  /* Change navbar styling on scroll */
+.navigation-wrap.scroll-on{
+  position:fixed;
+  background-color:var(--black-color);
+  top:0;
+  left:0;
+  width:100%;
+  box-shadow: 0 0.125rem 1.75rem 0 rgba(0,0,0,0.09);
+  transition:all .15s ease-in-out 0s;
+}
+.navigation-wrap.scroll-on .nav-link:hover,
+.navigation-wrap.scroll-on .nav-link.active{
+  color:var(--primary-color);
+}
+.navigation-wrap.scroll-on .main-btn{
+  color:var(--white-color);
+  margin:auto;
+}
+.navigation-wrap.scroll-on .main-btn:hover{
+  background-color:transparent;
+}
+.navigation-wrap.scroll-on .main-btn::before,
+.navigation-wrap.scroll-on .main-btn::after{
+  background-color:var(--black-color);
+}
+ 
+.navbar-brand{
+  font-size: 2rem;
+}
