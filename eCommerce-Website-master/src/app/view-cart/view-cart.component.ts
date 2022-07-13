@@ -46,6 +46,8 @@ export class ViewCartComponent implements OnInit {
 
   GetDataFromMyService(){
     this.DataFromMyService = this._DataService.GetData();
+    console.log(this.DataFromMyService);
+    
   }
 
 }
