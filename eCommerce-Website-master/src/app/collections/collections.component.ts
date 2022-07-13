@@ -6,6 +6,7 @@ import { NonVolatileService } from '../sharedPortal/Services/non-volatile.servic
 
 
 
+
 @Component({
   selector: 'app-collections',
   templateUrl: './collections.component.html',
@@ -17,9 +18,9 @@ export class CollectionsComponent implements OnInit {
 
   constructor(
     private _DataService:DataServicesService,
+    private _Router:Router,
     private _NonVolatileService:NonVolatileService,
-    private _MessengerService:MessengerService,
-    private _Router:Router
+    private _MessengerService:MessengerService
   ) { }
 
   ngOnInit(): void {
@@ -33,11 +34,15 @@ export class CollectionsComponent implements OnInit {
     console.log(this.MyDataArray);
 
   }
-  
-  GoToViewcart(id:any){
-    this._NonVolatileService.SetDataFromLocalStorage(id);
-    this._MessengerService.SendDataWithMessage(id);
-    this._Router.navigate(['view-cart']);
+
+  GoToViewProduct(Id: any) {
+    // arugment zaroor dena ha with type
+    // console.log(Id);
+      //3nd step: 4
+    this._NonVolatileService.SetDataFromLocalStorage(Id);
+    this._MessengerService.SendDataWithMessage(Id);
+    // 2sry page mai jain gy 
+    this._Router.navigate(['view-cart'])
   }
 
 }
