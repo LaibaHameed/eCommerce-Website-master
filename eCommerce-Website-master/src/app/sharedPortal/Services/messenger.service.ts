@@ -10,11 +10,11 @@ export class MessengerService {
 
   constructor() { }
 
-  SendDataWithMessage(Product_id:boolean){
+  SendDataWithMessage(Product_id: any) {
     this._Subject.next(Product_id);
   }
 
-  GetDataWithMessege(){
-  return  this._Subject.asObservable();
+  GetDataWithMessege() {
+    return this._Subject.asObservable();
   }
 }

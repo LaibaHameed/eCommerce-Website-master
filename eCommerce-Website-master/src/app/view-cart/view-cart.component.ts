@@ -10,44 +10,46 @@ import { NonVolatileService } from '../sharedPortal/Services/non-volatile.servic
 })
 export class ViewCartComponent implements OnInit {
 
-  DataRecieve:any;
+  DataRecieve: any;
   DataFromMyService: any = [];
-  FilteredArray:any
+  FilteredArray: any
 
   constructor(
-    private _DataService:DataServicesService,
-    private _NonVolatileService:NonVolatileService,
-    private _MessengerService:MessengerService
+    private _DataService: DataServicesService,
+    private _NonVolatileService: NonVolatileService,
+    private _MessengerService: MessengerService
   ) { }
 
   ngOnInit(): void {
     this._MessengerService.GetDataWithMessege().subscribe(
-      (DataComingFromMyService:any)=>{
+      (DataComingFromMyService: any) => {
         this.DataRecieve = DataComingFromMyService
       });
 
-      this.GetDataFromMyService();
+    this.GetDataFromMyService();
 
-      if(this.DataRecieve === undefined){
-        const localStorageId = this._NonVolatileService.GetDataFromLocalStorage();
-        this.FilteredArray = this.DataFromMyService().filter(
-          (Result:any) => {
-            return (Result._id === localStorageId);
-          }
-        );
-      }
-
-      this.FilteredArray = this.DataFromMyService().filter(
-        (Result:any) => {
-          return (Result._id === this.DataRecieve);
-        }
-      );
+    
   }
 
-  GetDataFromMyService(){
+  GetDataFromMyService() {
     this.DataFromMyService = this._DataService.GetData();
     console.log(this.DataFromMyService);
-    
+    if (this.DataRecieve === undefined) {
+      const localStorageId = this._NonVolatileService.GetDataFromLocalStorage();
+      this.FilteredArray = this.DataFromMyService.filter(
+        (Result: any) => {
+          return (Result._id === localStorageId);
+        }
+      );
+      return
+    }
+
+    this.FilteredArray = this.DataFromMyService.filter(
+      (Result: any) => {
+        return (Result._id === this.DataRecieve.Id);
+      }
+    );
+
   }
 
 }

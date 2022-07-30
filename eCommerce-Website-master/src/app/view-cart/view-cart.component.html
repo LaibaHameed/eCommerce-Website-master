@@ -1,6 +1,6 @@
 <div class="container my-4 image">
     <h2 class="mt-4 ">{{FilteredArray[0].Name}}</h2>
     <div class="img-box">
-      <img class="my-3" *ngFor="let Data of FilteredArray[0].Image" [src]="Data" alt="">
+      <img class="my-3" *ngFor="let _Data of FilteredArray[0].Image" [src]="_Data" alt="">
     </div>
 </div>
